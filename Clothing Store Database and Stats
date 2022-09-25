@@ -1,0 +1,31 @@
+--create a store database
+
+CREATE table clothing (id integer primary key, clothing_name text, size text, number_of_orders integer,price integer);
+
+
+insert into clothing values (1, "dress", "small", 5, 69.99);
+insert into clothing values (2, "skirt", "large", 4,44.99);
+insert into clothing values (3, "red shirt", "med", 6,29.99);
+insert into clothing values (4,"blue shirt","small",5,29.99);
+insert into clothing values (5, "shorts", "med", 4,39.99);
+insert into clothing values (6, "vest", "large", 6, 34.99);
+insert into clothing values (7, "beanie","med", 12,19.99);
+insert into clothing values (8, "jacket","small",5,129.99);
+insert into clothing values (9, "sweater","small", 3,69.99);
+insert into clothing values (10, "tank","large", 7,17.99);
+insert into clothing values (11, "swimsuit","med",8,79.99);
+insert into clothing values (12, "jeans","small",4,49.99);
+insert into clothing values (13, "bra","large",4,12.99);
+insert into clothing values (14, "undies","med",3,14.99);
+insert into clothing values (15, "hat","med",5,19.99);
+
+--display database ordered by price.
+select * from clothing order by price;
+
+--how many clothing iteams are size large?
+select count(size) from clothing where size="large";
+
+--what is the 4 most popular items?
+select clothing_name,number_of_orders from clothing
+order by number_of_orders desc
+limit 4
